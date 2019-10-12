@@ -1,0 +1,36 @@
+// Imports
+@import './src/assets/scss/helpers/mixins';
+@import './src/assets/scss/helpers/variables';
+
+
+
+// Clear
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Commone Classes 
+
+.flex-between {
+    @include flex-spaceBetween;
+}
+
+.text-light {
+    color: $whiteText !important;
+}
+
+.bg-orange {
+    background-color: $orangeColor;
+}
