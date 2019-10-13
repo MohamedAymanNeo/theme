@@ -33,7 +33,9 @@
       <div class="col-sm-12 flex-between">
         <ul class="social flex-between">
           <li *ngFor="let icon of socialIcons">
-            <i class={{icon.name}}><a href="javascript:void(0)"></a></i>
+            <a href="javascript:void(0)">
+              <i class={{icon.name}}></i>
+            </a>
           </li>
         </ul>
         <!-- End Of Social List -->

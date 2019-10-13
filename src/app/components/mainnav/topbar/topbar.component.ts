@@ -20,7 +20,7 @@ export class TopbarComponent implements OnInit {
     },
     {
       info: '123 977-654',
-      icon: 'fa fa-home'
+      icon: 'fa fa-phone'
     }
   ];
 

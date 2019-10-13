@@ -8,11 +8,42 @@
     line-height: 40px;
     background: #f4f4f4;
     color: #675444;
-    font-size: calc(5px + 1vw);
+    font-size:15px;
+    @media (max-width: 768px) {
+        display: none !important;
+    }
     .info {
         width: 60%;
+
+        @media (max-width: 1192px) {
+            width:70%
+        }
+
+        @media (max-width: 992px) {
+            width:80%
+        }
+
+        
+        
+        
     }
     .social {
         width: 10%;
+        
+        li {
+            i {
+                cursor: pointer;
+            }
+
+            // Hover On Social Links
+            &:hover {
+                i {
+                    color: #aa7c55;
+                    transform: scale(1.2)
+                }
+            }
+        }
     }
+
+
 }
