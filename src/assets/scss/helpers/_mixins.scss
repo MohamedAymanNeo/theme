@@ -1,0 +1,17 @@
+// Mixins
+
+
+// items Space Between
+
+@mixin flex-spaceBetween {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+// items Center
+
+@mixin flex-center {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

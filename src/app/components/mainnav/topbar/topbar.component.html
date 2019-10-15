@@ -1,3 +1,60 @@
-<p>
-  topbar works!
-</p>
+<div class="topbar" *ngIf="!collapse">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="info float-left flex-between">
+          <li *ngFor="let item of list">
+            <p>
+              <i class={{item.icon}}></i>
+              {{item.info}}
+            </p>
+          </li>
+        </ul>
+        <!-- End Of Info List -->
+        <ul class="social float-right flex-between">
+          <li *ngFor="let icon of socialIcons">
+            <i class={{icon.name}}><a href="javascript:void(0)"></a></i>
+          </li>
+        </ul>
+        <!-- End Of Social List -->
+      </div>
+    </div>
+    <!-- End Of Row -->
+  </div> 
+  <!-- End Of Container -->
+</div>
+<!-- End Of Topbar -->
+
+
+
+<div class="topbar" *ngIf="collapse">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 flex-between">
+        <ul class="social flex-between">
+          <li *ngFor="let icon of socialIcons">
+            <a href="javascript:void(0)">
+              <i class={{icon.name}}></i>
+            </a>
+          </li>
+        </ul>
+        <!-- End Of Social List -->
+        <ul class="info flex-between">
+          <li *ngFor="let item of list">
+            <p>
+              <i class={{item.icon}}></i>
+              {{item.info}}
+            </p>
+          </li>
+        </ul>
+        <!-- End Of Info List -->
+        
+      </div>
+    </div>
+    <!-- End Of Row -->
+  </div> 
+  <!-- End Of Container -->
+</div>
+
+<!-- End Of Topbar -->
+

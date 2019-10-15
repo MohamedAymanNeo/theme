@@ -1,0 +1,515 @@
+@import './src/assets/scss/helpers/variables';
+@import './src/assets/scss/helpers/mixins';
+
+
+nav {
+  .navbar-brand {
+    @media (min-width:799px) {
+      color: red;
+    }
+    @media (max-width:860px) {
+      color: blue;
+    }
+  }
+    .navbar-collapse {
+        flex-grow: 0;
+    }
+    &.navbar-tall {
+      padding: .5rem 1rem;
+      @include flex-center;
+      @media (min-width: 892px) {
+        // height: auto;
+      }
+    }
+    .navbar-nav {
+        .nav-item {
+            margin-right: 25px;
+            position: relative;
+            &:last-child {
+              margin-right: 0;
+            }
+            &.active {
+                background: $textBrownColor;
+                border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+                color: $whiteText;
+            }
+            &:hover {
+                background: $textBrownColor;
+                border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+                color: $whiteText;
+
+                .drop-menu {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-around;
+                    position: absolute;
+                    top: 40px;
+                    @media (max-width: 992px) {
+                        position: inherit;
+                        top: 0;
+                    }
+
+                }
+
+                .dropdown-menu {
+                    background: transparent;
+                    border: none;
+                    color: inherit;
+                }
+                .menu-1 {
+                    perspective: 1000px;
+                    .drop-item {
+                        opacity: 0;
+                        @for $i from 1 through 4 {
+                            &:nth-child(#{$i}) {
+                            animation-name: leftToRight;
+                            animation-duration: 400ms;
+                            animation-delay: (150ms * $i) - 300;
+                            animation-timing-function: ease-in-out;
+                            animation-fill-mode: forwards;
+                            }
+                        }
+                    }
+                }
+                .menu-2 {
+                    perspective: 1000px;
+                    .drop-item {
+                        opacity: 0;
+                        transform-origin: top center;
+                        @for $i from 1 through 4 {
+                            &:nth-child(#{$i}) {
+                                animation-name: topToBottom;
+                                animation-duration: 400ms;
+                                animation-delay: (150ms * $i) - 300;
+                                animation-timing-function: ease-in-out;
+                                animation-fill-mode: forwards;
+                            }
+                        }
+                    }
+                }
+                .menu-3 {
+                    perspective: 1000px;
+                    .drop-item {
+                        opacity: 0;
+                        @for $i from 1 through 4 {
+                            &:nth-child(#{$i}) {
+                                animation-name: itemBounce;
+                                animation-duration: 400ms;
+                                animation-delay: (150ms * $i) - 300;
+                                animation-timing-function: ease-in-out;
+                                animation-fill-mode: forwards;
+                            }
+                        }
+                    }
+                }
+                .menu-4 {
+                    perspective: 1000px;
+                    .drop-item {
+                        opacity: 1;
+                        transform-origin: top right;
+                        @for $i from 1 through 4 {
+                            &:nth-child(#{$i}) {
+                                // animation-name: bottomToTop;
+                                animation-duration: 400ms;
+                                animation-delay: (150ms * $i) - 300;
+                                animation-timing-function: ease-in-out;
+                                animation-fill-mode: forwards;
+                            }
+                        }
+                    }
+                }
+
+            }
+            .drop-menu {
+                display: none;
+                // display: flex;
+                // flex-direction: column;
+                // align-items: center;
+                // justify-content: space-around;
+                // position: absolute;
+                // top: 50px;
+
+
+                .drop-item {
+
+                    a {
+                      height: 50px;
+                      width:150px;
+                      display:flex;
+                      justify-content: center;
+                      align-items: center;
+                    //   font: 300 22px $mainFont;
+                    border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+
+                      &.item--1 {
+                        background: $orangeColor;
+                      }
+                      &.item--2 {
+                        background: $orangeColor;
+                      }
+                      &.item--3 {
+                        background: $orangeColor;
+                      }
+                    //   &:hover {
+                    //     background:$textBrownColor;
+
+                    // }
+                    }
+                  }
+            }
+            .nav-link {
+                padding: 10px 15px;
+            }
+        }
+
+    }
+    .main-nav {
+      position: relative;
+      @include flex-spaceBetween;
+      // @media (min-width: 800px) {
+      //   flex-direction: row-reverse;
+      // }
+      .navbar-toggler {
+
+      }
+      .logo {
+        position: initial;
+        top:0;
+        left: 0;
+        transform: none;
+        @media (min-width: 1000px) {
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+      .navbar-nav {
+        display: inline-block;
+        // @media (min-width: 892px) {
+        //   display:flex;
+
+        // }
+      }
+      .navbar-list {
+        width: 100%;
+        text-align: right;
+        position: relative;
+        // @media (min-width: 892px) {
+        //   text-align: center;
+        //   padding-top: 20px;
+        // }
+        .nav-item {
+          display: inline-block;
+          float:none;
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3) {
+            float:left;
+          }
+
+          &.active {
+            background: $textBrownColor;
+            border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+            color: $whiteText;
+          }
+          &:hover {
+            background: $textBrownColor;
+            border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+            color: $whiteText;
+
+            .drop-menu {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: space-around;
+              position: absolute;
+              top: 40px;
+              @media (max-width: 992px) {
+                  position: inherit;
+                  top: 0;
+              }
+            }
+
+            .dropdown-menu {
+              background: transparent;
+              border: none;
+              color: inherit;
+            }
+            .menu-1 {
+                perspective: 1000px;
+                .drop-item {
+                    opacity: 0;
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) {
+                        animation-name: leftToRight;
+                        animation-duration: 400ms;
+                        animation-delay: (150ms * $i) - 300;
+                        animation-timing-function: ease-in-out;
+                        animation-fill-mode: forwards;
+                        }
+                    }
+                }
+            }
+            .menu-2 {
+              perspective: 1000px;
+              .drop-item {
+                opacity: 0;
+                transform-origin: top center;
+                @for $i from 1 through 4 {
+                  &:nth-child(#{$i}) {
+                      animation-name: topToBottom;
+                      animation-duration: 400ms;
+                      animation-delay: (150ms * $i) - 300;
+                      animation-timing-function: ease-in-out;
+                      animation-fill-mode: forwards;
+                  }
+                }
+              }
+            }
+            .menu-3 {
+              perspective: 1000px;
+              .drop-item {
+                  opacity: 0;
+                  @for $i from 1 through 4 {
+                    &:nth-child(#{$i}) {
+                        animation-name: itemBounce;
+                        animation-duration: 400ms;
+                        animation-delay: (150ms * $i) - 300;
+                        animation-timing-function: ease-in-out;
+                        animation-fill-mode: forwards;
+                    }
+                  }
+                }
+              }
+            .menu-4 {
+              perspective: 1000px;
+              .drop-item {
+                opacity: 1;
+                transform-origin: top right;
+                @for $i from 1 through 4 {
+                  &:nth-child(#{$i}) {
+                      // animation-name: bottomToTop;
+                    animation-duration: 400ms;
+                    animation-delay: (150ms * $i) - 300;
+                    animation-timing-function: ease-in-out;
+                    animation-fill-mode: forwards;
+                  }
+                }
+              }
+            }
+
+          }
+          .nav-link {
+            padding: 10px 15px;
+          }
+        }
+      }
+    }
+}
+
+
+
+
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) translateY(0px);
+  }
+}
+
+@keyframes topToBottom {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+
+@keyframes itemBounce {
+    0% {
+        opacity:0;
+        transform:scale(0.3) translateY(-60px);
+    }
+    80% {
+        transform:scale(1.2) translateY(10px);
+    }
+    100% {
+        opacity:1;
+        transform:scale(1) translateY(0px);
+    }
+}
+
+
+@keyframes bottomToTop {
+    0% {
+        opacity:0;
+        transform:rotate(-30deg);
+    }
+    100% {
+        opacity:1;
+        transform:rotate(0deg);
+    }
+}
+
+
+
+/* Start Style*/
+// .main__menu {
+//   display: grid;
+//   grid-template-columns: repeat(5, 1fr);
+//   @media (max-width: 900px) {
+//     grid-template-columns: 1fr;
+//     max-width: 300px;
+//     //opacity:0;
+//   }
+//   .list-item {
+//     &:hover {
+//       .drop-menu li {
+//         display: block;
+//       }
+//       .menu-1 {
+//         perspective: 1000px;
+//         .drop-item {
+//           opacity: 0;
+//           @for $i from 1 through 4 {
+//             &:nth-child(#{$i}) {
+//               animation-name: leftToRight;
+//               animation-duration: 400ms;
+//               animation-delay: (150ms * $i) - 300;
+//               animation-timing-function: ease-in-out;
+//               animation-fill-mode: forwards;
+//             }
+//           }
+//         }
+//       }
+//       .menu-2 {
+//         perspective: 1000px;
+//         .drop-item {
+//           opacity: 0;
+//           transform-origin: top center;
+//           @for $i from 1 through 4 {
+//             &:nth-child(#{$i}) {
+//               animation-name: topToBottom;
+//               animation-duration: 400ms;
+//               animation-delay: (150ms * $i) - 300;
+//               animation-timing-function: ease-in-out;
+//               animation-fill-mode: forwards;
+//             }
+//           }
+//         }
+//       }
+//       .menu-3 {
+//         perspective: 1000px;
+//         .drop-item {
+//           opacity: 0;
+//           @for $i from 1 through 4 {
+//             &:nth-child(#{$i}) {
+//               animation-name: itemBounce;
+//               animation-duration: 400ms;
+//               animation-delay: (150ms * $i) - 300;
+//               animation-timing-function: ease-in-out;
+//               animation-fill-mode: forwards;
+//             }
+//           }
+//         }
+//       }
+//       .menu-4 {
+//         perspective: 1000px;
+//         .drop-item {
+//           opacity: 0;
+//           transform-origin: top right;
+//           @for $i from 1 through 4 {
+//             &:nth-child(#{$i}) {
+//               animation-name: bottomToTop;
+//               animation-duration: 400ms;
+//               animation-delay: (150ms * $i) - 300;
+//               animation-timing-function: ease-in-out;
+//               animation-fill-mode: forwards;
+//             }
+//           }
+//         }
+//       }
+//       .home {
+//         border-top: 6px solid $tealBLue;
+//       }
+//       .about {
+//         border-top: 6px solid $lightPurple;
+//       }
+//       .widget {
+//         border-top: 6px solid $red;
+//       }
+//       .kabobs {
+//         border-top: 6px solid $yellow;
+//       }
+//       .contact {
+//         border-top: 6px solid $aqua;
+//       }
+//     }
+//     a {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       flex-direction: column;
+//       height: 200px;
+//       color: #fff;
+//       cursor: unset;
+//       &:hover {
+//         cursor: pointer;
+//       }
+//       span {
+//         font: 600 25px $mainFont;
+//         order: 2;
+//       }
+//       img {
+//         width: 100px;
+//       }
+//       &.home {
+//         background: $red;
+//       }
+//       &.about {
+//         background: $yellow;
+//       }
+//       &.widget {
+//         background: $aqua;
+//       }
+//       &.kabobs {
+//         background: $lightPurple;
+//       }
+//       &.contact {
+//         background: $tealBLue;
+//       }
+//       i {
+//         color: #fff;
+//         font-size: 100px;
+//       }
+//     }
+//     .drop-menu {
+//       .drop-item {
+//         display: block;
+//         a {
+//           height: 80px;
+//           font: 300 22px $mainFont;
+//           &.item--1 {
+//             background: $yellow;
+//           }
+//           &.item--2 {
+//             background: $tealBLue;
+//           }
+//           &.item--3 {
+//             background: $red;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
