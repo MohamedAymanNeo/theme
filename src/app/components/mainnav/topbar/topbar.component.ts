@@ -16,11 +16,7 @@ export class TopbarComponent implements OnInit {
     },
     {
       info: 'email@youremail.com',
-<<<<<<< HEAD
       icon: 'fa fa-envelope'
-=======
-      icon: 'fa fa-home'
->>>>>>> 37b4572d34d75651acb6a4495c5598dae160365a
     },
     {
       info: '123 977-654',
