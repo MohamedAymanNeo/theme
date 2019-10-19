@@ -1,17 +1,12 @@
 // Mixins
 
 
-<<<<<<< HEAD
 // items Space Between
-=======
-// items Space Between 
->>>>>>> 37b4572d34d75651acb6a4495c5598dae160365a
 
 @mixin flex-spaceBetween {
     display:flex;
     justify-content: space-between;
     align-items: center;
-<<<<<<< HEAD
 }
 // items Center
 
@@ -20,6 +15,165 @@
     justify-content: center;
     align-items: center;
 }
-=======
+
+// Mixin For Hover and Active
+
+@mixin activeAndHover {
+    background: $textBrownColor;
+    border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+    color: $whiteText;
 }
->>>>>>> 37b4572d34d75651acb6a4495c5598dae160365a
+
+
+
+// Mixin For Styling Navbar
+@mixin navbarStyle {
+    .nav-item {
+        margin-bottom: 5px;
+        position: relative;
+        // transition: all 1s cubic-bezier(0.39, 0.58, 0.57, 1);
+        @media (min-width: 991px) {
+            margin-bottom: 0;
+        }
+        &:nth-child(5) {
+            margin-bottom: 0;
+        }
+        &.active {
+            @include activeAndHover;
+        }
+        &:hover {
+            @include activeAndHover;
+
+            .drop-menu {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                position: absolute;
+                top: 40px;
+                @media (max-width: 992px) {
+                    position: inherit;
+                    top: 0;
+                }
+
+            }
+
+            .dropdown-menu {
+                background: transparent;
+                border: none;
+                color: inherit;
+
+                .drop-item {
+                    margin-bottom: 5px;
+                    &:last-child {
+                    margin-bottom: 0;
+                    }
+                }
+            }
+            .menu-1 {
+                perspective: 1000px;
+                .drop-item {
+                    opacity: 0;
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) {
+                        animation-name: leftToRight;
+                        animation-duration: 400ms;
+                        animation-delay: (150ms * $i) - 300;
+                        animation-timing-function: ease-in-out;
+                        animation-fill-mode: forwards;
+                        }
+                    }
+                }
+            }
+            .menu-2 {
+                perspective: 1000px;
+                .drop-item {
+                    opacity: 0;
+                    transform-origin: top center;
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) {
+                            animation-name: topToBottom;
+                            animation-duration: 400ms;
+                            animation-delay: (150ms * $i) - 300;
+                            animation-timing-function: ease-in-out;
+                            animation-fill-mode: forwards;
+                        }
+                    }
+                }
+            }
+            .menu-3 {
+                perspective: 1000px;
+                .drop-item {
+                    opacity: 0;
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) {
+                            animation-name: itemBounce;
+                            animation-duration: 400ms;
+                            animation-delay: (150ms * $i) - 300;
+                            animation-timing-function: ease-in-out;
+                            animation-fill-mode: forwards;
+                        }
+                    }
+                }
+            }
+            .menu-4 {
+                perspective: 1000px;
+                .drop-item {
+                    opacity: 1;
+                    transform-origin: top right;
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) {
+                            // animation-name: bottomToTop;
+                            animation-duration: 400ms;
+                            animation-delay: (150ms * $i) - 300;
+                            animation-timing-function: ease-in-out;
+                            animation-fill-mode: forwards;
+                        }
+                    }
+                }
+            }
+
+        }
+        .drop-menu {
+            display: none;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
+            // justify-content: space-around;
+            // position: absolute;
+            // top: 50px;
+
+
+            .drop-item {
+                margin-bottom: 5px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                a {
+                    height: 50px;
+                    width:150px;
+                    @include flex-center;
+                    border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+
+                    &.item--1 {
+                    background: $orangeColor;
+                    }
+                    &.item--2 {
+                    background: $orangeColor;
+                    }
+                    &.item--3 {
+                    background: $orangeColor;
+                    }
+                //   &:hover {
+                //     background:$textBrownColor;
+
+                // }
+                }
+                }
+        }
+        .nav-link {
+            padding: 10px 15px;
+        }
+    }
+    @content
+}
