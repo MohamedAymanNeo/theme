@@ -7,6 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+
+  aboutBoxs = [
+    {
+      imgSrc: '../../../assets/images/about/about5.jpg',
+      catType: 'Cat',
+      catName: 'LollyBob'
+    },
+    {
+      imgSrc: '../../../assets/images/about/about4.jpg',
+      catType: 'Cat',
+      catName: 'LollyBob'
+    },
+    {
+      imgSrc: '../../../assets/images/about/about4.jpg',
+      catType: 'Cat',
+      catName: 'LollyBob'
+    },
+    {
+      imgSrc: '../../../assets/images/about/about5.jpg',
+      catType: 'Cat',
+      catName: 'LollyBob'
+    },
+  ]
+
   constructor() { }
 
   ngOnInit() {

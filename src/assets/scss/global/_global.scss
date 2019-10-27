@@ -25,6 +25,10 @@ a {
     }
 }
 
+section {
+    padding: 120px 0;
+}
+
 // Commone Classes 
 
 .flex-between {
@@ -37,4 +41,12 @@ a {
 
 .bg-orange {
     background-color: $orangeColor;
+}
+
+.section-heading {
+    margin-bottom: 100px;
+}
+
+.special-border {
+    border-radius: 155px 45px 225px 75px/15px 125px 15px 155px;
 }

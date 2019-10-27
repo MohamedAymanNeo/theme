@@ -1,0 +1,222 @@
+@import './src/assets/scss/helpers/variables';
+
+
+// Styling the First Section
+.about {
+
+    h2 {
+        font-size: 62px;
+        font-weight: 800;
+        position: relative;
+        display: inline-block;
+        // &::before {
+        //     position: absolute;
+        //     content: '';
+        //     top: 40px;
+        //     left: -150px;
+        //     width: 140px;
+        //     height: 2px;
+        //     background: #000;
+        //     // background: url('../../../assets/images/about/header-logo.png') no-repeat center center;
+        // }
+        // &::after {
+        //     position: absolute;
+        //     content: '';
+        //     top: 40px;
+        //     right: -150px;
+        //     width: 140px;
+        //     height: 2px;
+        //     background: #000
+        // }
+    }
+    
+    &__info {
+        height:100%;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 110px;
+            width: 220px;
+            z-index: -100;
+            height: 230px;
+            background: url('../../../assets/images/about/heading-cat1.png') no-repeat center center;
+            opacity: 0.1;
+        }
+
+        h4 {
+            color: #7f7f7f;
+            font: 700 2.5em cursive;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        p {
+            color: #777;
+            line-height: 1.8;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .effect {
+            text-align: center;
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            color: $textBrownColor;
+            text-transform: capitalize;
+            background-color: $orangeColor;
+            /* background-color: - add your own background-color */
+            font: {
+                family: 'Cursive', sans-serif; /* put your font-family */
+                size: 18px;
+            }
+            padding: 20px 0px;
+            width: 150px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top:20px;
+        }
+        .effect-2 {
+            transition: all 0.2s linear 0s;
+            
+            &:before {
+              content: "\f0e0";
+              font-family: FontAwesome;
+              font-size: 15px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: absolute;
+              top: 0;
+              right: -30px;
+              width: 30px;
+              height: 100%;
+              background-color: rgba(#FFF,0.3);
+              border-radius: 0px 6px 6px 0px;
+              transition: all 0.2s linear 0s;
+              text-align: center;
+            }
+            
+            &:hover {
+              text-indent: -30px;
+              
+              &:before {
+                right: 0;
+                text-indent: 0px;
+              }
+            }
+        }
+
+    }
+}
+
+
+
+// Styling the Second Section
+
+.about-2 {
+
+    .box-item {
+        position: relative;
+        -webkit-backface-visibility: hidden;
+        width: 415px;
+        margin-bottom: 35px;
+        max-width: 100%;
+
+
+        .flip-box {
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            perspective: 1000px;
+            -webkit-perspective: 1000px;
+
+            &:hover {
+                .flip-box-front {
+                    -ms-transform: rotateY(-180deg);
+                    -webkit-transform: rotateY(-180deg);
+                    transform: rotateY(-180deg);
+                    -webkit-transform-style: preserve-3d;
+                    -ms-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+                }
+
+                .flip-box-back {
+                    -ms-transform: rotateY(0deg);
+                    -webkit-transform: rotateY(0deg);
+                    transform: rotateY(0deg);
+                    -webkit-transform-style: preserve-3d;
+                    -ms-transform-style: preserve-3d;
+                    transform-style: preserve-3d;
+                }
+            }
+
+            .flip-box-front,
+            .flip-box-back {
+                background-size: cover;
+                background-position: center;
+                border-radius: 30px;
+                // min-height: 475px;
+                min-height: 255px;
+                -ms-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+                transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+                -webkit-transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            .flip-box-front {
+                -ms-transform: rotateY(0deg);
+                -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+                -webkit-transform-style: preserve-3d;
+                -ms-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+
+                img {
+                    max-width:100%;
+                    border-radius: 30px;
+                }
+            }
+
+            .flip-box-back {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                
+                -ms-transform: rotateY(180deg);
+                -webkit-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+                -webkit-transform-style: preserve-3d;
+                -ms-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                background: black;
+            }
+
+            .inner {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                padding: 60px;
+                outline: 1px solid transparent;
+                -webkit-perspective: inherit;
+                perspective: inherit;
+                z-index: 2;
+                
+                transform: translateY(-50%) translateZ(60px) scale(.94);
+                -webkit-transform: translateY(-50%) translateZ(60px) scale(.94);
+                -ms-transform: translateY(-50%) translateZ(60px) scale(.94);
+                top: 50%;
+
+                .flip-box-header {
+                    color: #FFF;
+                }
+            }
+
+        }
+    }
+}

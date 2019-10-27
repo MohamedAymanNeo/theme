@@ -51,9 +51,14 @@
                 justify-content: space-around;
                 position: absolute;
                 top: 40px;
+
                 @media (max-width: 992px) {
                     position: inherit;
                     top: 0;
+                }
+
+                a {
+                    text-decoration: none;
                 }
 
             }

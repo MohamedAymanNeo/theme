@@ -1,3 +1,71 @@
-<p>
-  about works!
-</p>
+<!-- 
+  About Us Section 
+  First Style
+ -->
+
+<section id="about" class="about" *ngIf="0">
+  <div class="container">
+    <div class="section-heading bg text-center">
+      <h2 class="ab">About Us</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="about__info">
+          <h4>Caring for your pets</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ipsa doloribus voluptates delectus, excepturi fuga vel velit eum similique itaque consequuntur necessitatibus quisquam possimus corporis voluptatum quibusdam error facilis iure!</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta deleniti aut doloremque voluptatum hic id vitae vel voluptates nulla veniam.</p>
+          <a class="effect effect-2" href="#" title="Contact Us">Contact Us</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="about__photo">
+          <img src="../../../assets/images/about/about-photo.jpg" class="special-border" alt="about-Cat">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="about-2" class="about-2" *ngIf="1">
+  <div class="container">
+    <div class="section-heading">
+      <h2>About</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="about-2__text">
+          <h2>Cat Care</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium est dolorem consequatur magni soluta voluptate asperiores consectetur dolor exercitationem quibusdam!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia ducimus a nihil animi dolorem, itaque tenetur ex unde, veritatis enim amet voluptatum qui omnis maxime reprehenderit? Et sed libero fuga, quasi labore excepturi, rem repudiandae adipisci odit numquam veniam?</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="about-2__gallary">
+          <div class="row">
+            <div class="col-md-6" *ngFor="let box of aboutBoxs">
+              <div class="box-item">
+                <div class="flip-box">
+                  <div class="flip-box-front text-center">
+                    <img src="{{box.imgSrc}}" alt="">
+                  </div>
+                  <div class="flip-box-back text-center">
+                    <div class="inner color-white">
+                      <h5 class="flip-box-header">{{box.catType}}</h5>
+                      <h6 class="flip-box-header">{{box.catName}}</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
